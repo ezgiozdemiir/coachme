@@ -3,21 +3,19 @@ import CloseMenu from "../../assets/icons/x.svg?react";
 import MenuIcon from "../../assets/icons/menu.svg?react";
 import Logo from "../../assets/icons/main-logo.svg?react";
 
-import "./header.css";
+import "./header.scss";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if the user scrolled more than slider's height
-      const sliderHeight = 500; // Adjust this to match your slider's real height
+      const sliderHeight = 500;
       setIsScrolled(window.scrollY > sliderHeight);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -27,7 +25,6 @@ const Header: React.FC = () => {
   const closeMobileMenu = (): void => setClick(false);
 
   const navLinks = [
-    // { label: "ANA SAYFA", href: "#" },
     { label: "HAKKIMIZDA", href: "#" },
     { label: "BLOG", href: "#" },
     { label: "İLETİŞİM", href: "#" },
@@ -37,36 +34,38 @@ const Header: React.FC = () => {
 
   return (
     <div className={isScrolled ? "header navbar scrolled" : "header navbar"}>
-      <div className="logo-nav">
-        <div className="logo-container">
-          <a href="#">
-            <Logo className="logo" />
-          </a>
+      <div className="nav-content">
+        <div className="logo-nav">
+          <div className="logo-container">
+            <a href="#">
+              <Logo className="logo" />
+            </a>
+          </div>
+          <ul className={click ? "nav-options active" : "nav-options"}>
+            {navLinks.map(({ label, href, mobileOnly, className }, index) => (
+              <li
+                key={index}
+                className={`option${mobileOnly ? " mobile-option" : ""}`}
+                onClick={closeMobileMenu}
+              >
+                <a href={href} className={className || ""}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className={click ? "nav-options active" : "nav-options"}>
-          {navLinks.map(({ label, href, mobileOnly, className }, index) => (
-            <li
-              key={index}
-              className={`option${mobileOnly ? " mobile-option" : ""}`}
-              onClick={closeMobileMenu}
-            >
-              <a href={href} className={className || ""}>
-                {label}
-              </a>
-            </li>
-          ))}
+        <ul className="signin-up">
+          <li className="sign-in" onClick={closeMobileMenu}>
+            <a href="#">GİRİŞ YAP</a>
+          </li>
+          <li onClick={closeMobileMenu}>
+            <a href="#" className="signup-btn">
+              ÜYE OL
+            </a>
+          </li>
         </ul>
       </div>
-      <ul className="signin-up">
-        <li className="sign-in" onClick={closeMobileMenu}>
-          <a href="#">GİRİŞ YAP</a>
-        </li>
-        <li onClick={closeMobileMenu}>
-          <a href="#" className="signup-btn">
-            ÜYE OL
-          </a>
-        </li>
-      </ul>
       <div className="mobile-menu" onClick={handleClick}>
         {click ? (
           <CloseMenu className="menu-icon" />

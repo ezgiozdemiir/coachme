@@ -16,12 +16,19 @@
       padding-bottom: 1rem;
     }
 
-    button {
-      @include button;
+    p{
+      padding-bottom: 2rem
+    }
 
+    a {
+      @include button;
+      
       img {
         width: 1.5rem;
       }
+    }
+    a:hover{
+      background: #1683ff ;
     }
   }
 
@@ -92,6 +99,7 @@
     margin: 0 auto;
     width: 75vw;
     gap: 2rem;
+    padding-bottom: 2rem;
 
     h1 {
       display: flex;

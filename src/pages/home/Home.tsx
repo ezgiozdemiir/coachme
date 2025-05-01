@@ -28,13 +28,7 @@ export default function Home() {
       <div className="explanations">
         <h1>{MAIN_PAGE_SUMMARY.title}</h1>
         <p>{MAIN_PAGE_SUMMARY.summaryTextp1}</p>
-        <button>
-          DAHA FAZLASI
-          {/* <div>
-            <p>DAHA FAZLASI</p>
-            <img src={arrow} alt="" />
-          </div> */}
-        </button>
+        <a>DAHA FAZLASI</a>
       </div>
       <div className="summary">
         <h1>Biz Kimiz?</h1>
