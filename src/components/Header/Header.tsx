@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import CloseMenu from "../../assets/x.svg?react";
-import MenuIcon from "../../assets/menu.svg?react";
-import Logo from "../../assets/logo.svg?react";
+import CloseMenu from "../../assets/icons/x.svg?react";
+import MenuIcon from "../../assets/icons/menu.svg?react";
+import Logo from "../../assets/icons/main-logo.svg?react";
 
 import "./header.css";
 
@@ -27,11 +27,12 @@ const Header: React.FC = () => {
   const closeMobileMenu = (): void => setClick(false);
 
   const navLinks = [
-    { label: "ABOUT", href: "#" },
-    { label: "CONTACT", href: "#" },
+    // { label: "ANA SAYFA", href: "#" },
+    { label: "HAKKIMIZDA", href: "#" },
     { label: "BLOG", href: "#" },
-    { label: "SIGN-IN", href: "#", mobileOnly: true },
-    { label: "SIGN-UP", href: "#", mobileOnly: true, className: "sign-up" },
+    { label: "İLETİŞİM", href: "#" },
+    { label: "GİRİŞ YAP", href: "#", mobileOnly: true },
+    { label: "ÜYE OL", href: "#", mobileOnly: true, className: "sign-up" },
   ];
 
   return (
@@ -58,11 +59,11 @@ const Header: React.FC = () => {
       </div>
       <ul className="signin-up">
         <li className="sign-in" onClick={closeMobileMenu}>
-          <a href="#">SIGN-IN</a>
+          <a href="#">GİRİŞ YAP</a>
         </li>
         <li onClick={closeMobileMenu}>
           <a href="#" className="signup-btn">
-            SIGN-UP
+            ÜYE OL
           </a>
         </li>
       </ul>

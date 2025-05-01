@@ -1,14 +1,30 @@
+@import "../../styles/mixins";
 .home {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background-color: #fafafc;
 
-  .carousel {
-    img{
-        height: 80vh;
-    width: 100%;
+  .explanations {
+    color: white;
+    padding-top: 35vh;
+    height: 80vh;
+    background-image: url("../../assets/slider/slider_background.png");
+    padding-left: 2rem;
+
+    h1 {
+      padding-bottom: 1rem;
+    }
+
+    button {
+      @include button;
+
+      img {
+        width: 1.5rem;
+      }
     }
   }
+
   .flip-card {
     perspective: 1000px;
     width: 100%;
@@ -45,15 +61,12 @@
     }
 
     .front {
-    //   background-color: #009345; // or dynamic color
-    background: url(../../assets/purple_card_bg.png);
       z-index: 2;
+      background: url(../../assets/card/purple_card_bg_darker.png);
     }
 
     .back {
-    //   background-color: #311b92;
-    background: url(../../assets/purple_card_bg_darker.png);
-
+      background: url(../../assets/card/blue_card_bg.png);
       transform: rotateY(180deg);
     }
 
@@ -92,6 +105,7 @@
       text-align: center;
     }
   }
+
   .steps {
     display: flex;
     width: 80vw;
@@ -101,12 +115,6 @@
       ul {
         display: flex;
         flex-direction: column;
-
-        li {
-          img {
-            // width: 90vw;
-          }
-        }
       }
     }
 
@@ -114,12 +122,6 @@
       ul {
         display: flex;
         flex-direction: column;
-
-        li {
-          img {
-            // width: 90vw;
-          }
-        }
       }
     }
 
@@ -134,14 +136,12 @@
 
         li {
           width: calc(78vw / 3);
-          // background-image: url("../../assets/card_background_gray1.png");
           display: flex;
           flex-direction: column;
-          // justify-content: space-between; // helps stretch full height
-        //   padding: 2rem;
+
           div {
-            margin-top: auto; // pushes it to the bottom
-            padding-bottom: 2rem; // your desired space
+            margin-top: auto;
+            padding-bottom: 2rem;
           }
         }
       }
