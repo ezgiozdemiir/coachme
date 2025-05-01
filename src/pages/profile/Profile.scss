@@ -1,0 +1,22 @@
+.profile {
+  &__info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    &--picture {
+      display: flex;
+      img {
+        width: 7rem;
+        border-radius: 50%;
+      }
+    }
+    &--summary {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

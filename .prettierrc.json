@@ -1,0 +1,10 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5"
+  }
+}
