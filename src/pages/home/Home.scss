@@ -104,7 +104,7 @@
     h1 {
       display: flex;
       justify-content: center;
-      padding-top: 2rem;
+      padding-top: 1rem;
     }
 
     p {
@@ -118,18 +118,51 @@
     display: flex;
     width: 80vw;
     margin: 0 auto;
+    padding-bottom: 1.5rem;
 
     @media (max-width: 767px) {
       ul {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1vw;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+
+        
+        li {
+          width: calc(79vw);
+          display: flex;
+          flex-direction: column;
+
+          div {
+            margin-top: auto;
+            padding-bottom: 2rem;
+          }
+        }
       }
     }
 
     @media (min-width: 768px) and (max-width: 1023px) {
       ul {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1vw;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+
+        
+        li {
+          width: calc(78vw / 2);
+          display: flex;
+          flex-direction: column;
+
+          div {
+            margin-top: auto;
+            padding-bottom: 2rem;
+          }
+        }
       }
     }
 

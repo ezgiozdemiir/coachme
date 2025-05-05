@@ -4,6 +4,7 @@ import {
   MAIN_PAGE_SUMMARY,
 } from "../../data/main-page-data";
 import arrow from "../../assets/icons/arrow-right-solid.svg";
+import Footer from "../../components/footer/Footer";
 
 export default function Home() {
   //Application Steps Card Structure
@@ -39,6 +40,7 @@ export default function Home() {
       <div className="steps">
         <ul>{appSteps}</ul>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

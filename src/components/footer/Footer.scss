@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: url("../../assets/slider/slider_background.png");
+  color: white;
+  font-size: 14px;
+  padding: 1.5rem;
+  .info {
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+    .logo{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        img{
+            width: 100px;
+            align-self: start;
+        }
+
+        p{
+            width: 200px;
+            text-wrap: wrap;
+        }
+    }
+    .links{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        a{
+            text-decoration: none;
+        }
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+    }
+  }
+  .copyright {
+    display: flex;
+    justify-content: start;
+    padding-top: 2rem;
+    
+  }
+}

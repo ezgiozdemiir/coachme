@@ -4,6 +4,7 @@ import MenuIcon from "../../assets/icons/menu.svg?react";
 import Logo from "../../assets/icons/main-logo.svg?react";
 
 import "./header.scss";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,11 +26,16 @@ const Header: React.FC = () => {
   const closeMobileMenu = (): void => setClick(false);
 
   const navLinks = [
-    { label: "HAKKIMIZDA", href: "#" },
-    { label: "BLOG", href: "#" },
-    { label: "İLETİŞİM", href: "#" },
-    { label: "GİRİŞ YAP", href: "#", mobileOnly: true },
-    { label: "ÜYE OL", href: "#", mobileOnly: true, className: "sign-up" },
+    { label: "HAKKIMIZDA", href: "/about" },
+    { label: "BLOG", href: "/blog" },
+    { label: "İLETİŞİM", href: "/contact" },
+    { label: "GİRİŞ YAP", href: "/signin", mobileOnly: true },
+    {
+      label: "ÜYE OL",
+      href: "/signup",
+      mobileOnly: true,
+      className: "sign-up",
+    },
   ];
 
   return (
@@ -37,9 +43,9 @@ const Header: React.FC = () => {
       <div className="nav-content">
         <div className="logo-nav">
           <div className="logo-container">
-            <a href="#">
+            <Link to="/">
               <Logo className="logo" />
-            </a>
+            </Link>
           </div>
           <ul className={click ? "nav-options active" : "nav-options"}>
             {navLinks.map(({ label, href, mobileOnly, className }, index) => (
@@ -48,9 +54,9 @@ const Header: React.FC = () => {
                 className={`option${mobileOnly ? " mobile-option" : ""}`}
                 onClick={closeMobileMenu}
               >
-                <a href={href} className={className || ""}>
+                <Link to={href} className={className || ""}>
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -60,9 +66,9 @@ const Header: React.FC = () => {
             <a href="#">GİRİŞ YAP</a>
           </li>
           <li onClick={closeMobileMenu}>
-            <a href="#" className="signup-btn">
+            <Link to="/signup" className="signup-btn">
               ÜYE OL
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
